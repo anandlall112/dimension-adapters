@@ -63,7 +63,7 @@ async function usdEquivalent(_: string, timestamp: number) {
           ethereum.traces
         WHERE
           block_number > 17539904
-          and to_address = '\\' + CONTRACT_ADDRESS
+          and to_address = '\\'${CONTRACT_ADDRESS}
           and error is null
           AND block_time BETWEEN ${dayAgo.toISOString()} AND ${now.toISOString()};
       `;
